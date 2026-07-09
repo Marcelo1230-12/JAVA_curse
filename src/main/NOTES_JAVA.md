@@ -421,6 +421,4 @@ EX.
         }
     }
 
-the key work for the inheritance is [ extends ] 
-
-
+the key work for the inheritance is [ extends ]
