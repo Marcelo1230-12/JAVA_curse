@@ -2,7 +2,7 @@
  
 This is call as a nested loop where we can use a loop inside another loop, think this as using a matrix , this is helpful
 when in the code is necesary to reapet the code more times that we think so to avoid repeat the code, the nested loop is 
-very helpful in these types of cases , the nested loops can't intelerate when the variable is the same, thats why we need to 
+very helpful in these types of cases , the nested loops can't integrate when the variable is the same, that's why we need to 
 change the name of the variable in the loops, skeleton of a nested loop is:
 
     for (some statement){
@@ -47,9 +47,9 @@ close the scanner at the end
 
 # **METHODS**
 
-Methods are a block of code that we can reusable inside of any funtions , to use these methods we to use the name of the method
+Methods are a block of code that we can be reusable inside any functions , to use these methods we to use the name of the method
 or also name "called the method" using a "()", this help to don't repeat yourself (D.R.Y), these types of variables has
-to be static when is inside the main funtion.
+to be static when is inside the main function.
 But if we want to use any type of specific types inside the methods we need to set up things that are call parametres,
 this parametres will act as part of the funtion that we need to put to make the method work
 Also any variable that are use inside the method and the methods outside the methods are not coorelated, the order of 
@@ -110,8 +110,8 @@ Ex of an overload methods:
     static add (int x, int y,int z );
     static add (int x, int y,int z , int g ); etc....
 
-This variables arguments help to simplify these long and repitetive variables to a simple and single mathod
-with the help of an Elipsis (...) this meands in the argument the paramenters are put into an array 
+These variables arguments help to simplify these long and repitetive variables to a simple and single mathod
+with the help of an Ellipsis (...) this means in the argument the paramenters are put into an array 
 
 EX:
 
@@ -147,11 +147,11 @@ inside the array ).
 
 # **Object Orient Programing (OOP)**
 
-Object Orient Programin or OOP know commun is a programing code that help to entities to hold data (attribiteties) or 
+Object Orient Programin or OOP know common is a programing code that help to entities to hold data (attribiteties) or 
 can perform actions (methods) , this can be also know has a bluprint or template of some object, OOP can work in different ways 
-Encapsulation is where behind data and methods can be malipulate in its classes, making possible to hide internal details
-Inheritance this is where the child clase can take some reference fron the parent class having some reusable code and organization 
-Polymorphism this tread differentes classes as a common parent class often is used a overriding or overload code 
+Encapsulation is where behind data and methods can be manipulated in its classes, making possible to hide internal details
+Inheritance this is where the child class can take some reference fron the parent class having some reusable code and organization 
+Polymorphism this tread different classes as a common parent class often is used an overriding or overload code 
 Abtractions this hide complex implementation detail and only shows essential features of a objeect throght a abstrac class or interface
 
 To use a OOP we need to createa a new class outside the main code this outside code will be the parent class or the class that can hold 
@@ -426,7 +426,7 @@ the key work for the inheritance is [ extends ]
 # **Polymorphism**
 
 Polymorphism is a way to treat an Object as another objects , can also can be indentify as another object, this has a facility 
-to writing a reusable ,flexive and maintainable code by allowing to the programmers to do an single anctions in varius differnt ways 
+to writing a reusable ,flexive and maintainable code by allowing to the programmers to do a single actions in varius differnt ways 
 depending on the context of the code.
 The code from one file can take and allows different objects to enable a single  interface like behaviors or data types
 Can also Polymorphism can be used with interfaces.
@@ -476,4 +476,83 @@ EX
         }
     }   
 
-# **RUNTIME POLYMORPHISM**
+# **RUNTIME POLYMORPHISM** 
+
+This a type of polymorphism where the programmer decides the time of the code execution. This is based in the data type
+of the object, this is processor by the JVM (java virtual machine) at certain run time, this is achieved through the 
+method overriding where in the subclass there is a specific method implementation where is located in the superclass.
+
+EX
+
+    class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+        }
+    }
+    
+    class Dog extends Animal {
+    @Override
+    void sound() {
+    System.out.println("Dog barks");
+        }
+    }
+    
+    class Cat extends Animal {
+    @Override
+    void sound() {
+    System.out.println("Cat meows");
+        }
+    }
+    
+    public class Main {
+    public static void main(String[] args) {
+    // Upcasting: Parent reference referring to Child object
+    Animal myDog = new Dog();
+    Animal myCat = new Cat();
+
+        // Method calls are resolved at runtime based on the actual object
+        myDog.sound(); // Output: Dog barks
+        myCat.sound(); // Output: Cat meows
+        }         
+    }   
+
+
+# **GETTERS AND SETTER**
+
+These two names of methods help to protect abject data and abe aviable to add rules for accessing or modifying them 
+getter are usually use for make the methods have a field Readable and setter is use for methods that can have a field of writeable 
+
+The keyworkds for use an GETTER is  [ get_thenameofthefuntion(); ]
+The keyworkds for use an SETTER is  [ set_thenameofthefuntion(); ]
+
+EX.
+
+    public class Employee {
+    private int id;
+    private String name;
+
+    // Getter for id
+    public int getId() {
+        return id;
+    }
+
+    // Setter for id
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    // Getter for name
+    public String getName() {
+        return name;
+    }
+
+    // Setter for name with validation
+    public void setName(String name) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be empty");
+        }
+        this.name = name;
+        }
+    }   
+
+# **AGREGATION**
