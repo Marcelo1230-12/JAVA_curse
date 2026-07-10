@@ -422,3 +422,58 @@ EX.
     }
 
 the key work for the inheritance is [ extends ]
+
+# **Polymorphism**
+
+Polymorphism is a way to treat an Object as another objects , can also can be indentify as another object, this has a facility 
+to writing a reusable ,flexive and maintainable code by allowing to the programmers to do an single anctions in varius differnt ways 
+depending on the context of the code.
+The code from one file can take and allows different objects to enable a single  interface like behaviors or data types
+Can also Polymorphism can be used with interfaces.
+
+## Polymorphism has two mechanisms 
+
+The first one is call "Compile-time Polymorphism" these methods is also know like "method overloading" this can allow
+mutiples methods to share the same class but the difference are found in the parameters, the compiler determines which method
+is used depending on the parameters uses at the moment.
+
+The second one is called 'Runtime Polymorphism' also knows as "method overriding" this happens when the Subclasses when this 
+take a method form the Upper class, the Subclass overrider a specific methods and the java compiler determine which one is the best to use 
+according how's is use 
+
+EX.
+    
+    $$Compile-time Polymorphism
+    class Calculator {
+    int add(int a, int b) { return a + b; }
+    double add(double a, double b) { return a + b; }
+    }
+    
+    public class Main {
+    public static void main(String[] args) {
+    Calculator calc = new Calculator();
+    System.out.println(calc.add(5, 10));       // Calls int version
+    System.out.println(calc.add(5.5, 10.5));   // Calls double version
+        }
+    }   
+
+EX
+
+    %%Runtime Polymorphism
+    class Animal {
+    void sound() { System.out.println("Animal makes sound"); }
+        }
+    
+    class Dog extends Animal {
+    @Override
+    void sound() { System.out.println("Dog barks"); }
+    }
+    
+    public class Main {
+    public static void main(String[] args) {
+    Animal myDog = new Dog(); // Upcasting
+    myDog.sound(); // Output: Dog barks
+        }
+    }   
+
+# **RUNTIME POLYMORPHISM**
