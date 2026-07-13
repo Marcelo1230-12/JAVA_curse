@@ -555,4 +555,143 @@ EX.
         }
     }   
 
-# **AGREGATION**
+# **AGGREGATION**
+
+Its a relationship between two classes, the type of relation is "has-a", this meaning that one object contains part of another object 
+    as part of the structure but the object/s that exist are independently.
+ex.
+
+-One [Independent Lifecycles]; objects or conteined can exist independently of one container, if the continer is destroyed, one part remains intact 
+-
+-Two [Weak Ownership]; containters class hold a reference  to the other class but is doesn't own its lifecycle or creation
+-
+-Three [Code Reusability]; this allows the code to reuse funtionally from others classes without inheritance or tigh coupling.
+-
+
+EX.
+
+    import java.util.ArrayList;
+    import java.util.List;
+    
+    // Independent class (Part)
+    class Employee {
+    private String name;
+    private int id;
+    
+        public Employee(String name, int id) {
+            this.name = name;
+            this.id = id;
+        }
+    
+        public String getName() { return name; }
+        public int getId() { return id; }
+    }
+    
+    // Container class (Whole)
+    class Department {
+    private String deptName;
+    private List<Employee> employees; // Aggregation: holds references
+
+    public Department(String deptName) {
+        this.deptName = deptName;
+        this.employees = new ArrayList<>();
+    }
+
+    // Employees are created OUTSIDE and passed in
+    public void addEmployee(Employee emp) {
+        employees.add(emp);
+    }
+
+    public void showEmployees() {
+        System.out.println("Employees in " + deptName + ":");
+        for (Employee emp : employees) {
+            System.out.println("ID: " + emp.getId() + ", Name: " + emp.getName());
+            }
+        }
+    }
+
+    public class Main {
+    public static void main(String[] args) {
+    // 1. Create Employees independently
+    Employee emp1 = new Employee("Alice", 101);
+    Employee emp2 = new Employee("Bob", 102);
+
+        // 2. Create Department
+        Department hr = new Department("Human Resources");
+
+        // 3. Add existing employees to department
+        hr.addEmployee(emp1);
+        hr.addEmployee(emp2);
+
+        hr.showEmployees();
+
+        // 4. Prove Independence: 
+        // Even if 'hr' is destroyed, emp1 and emp2 still exist 
+        // and can be added to another department.
+        Department sales = new Department("Sales");
+        sales.addEmployee(emp1); // Alice moves to Sales
+        }      
+    }   
+
+# **COMPOSITON**
+
+Composition mean that the code establish a strong relatioship between classes, where one class contain objects of another class
+as instance variables, is different form inheritance, composition allows to reuse and modular desing the code by combining simpler 
+objects to build complex one, the life cicle of the composition depends on the containing object in the container.
+The componer cannot exist idenpendetly if the container object id destroy the composition is also destroy, thats the difference from
+Aggregation. 
+
+-One [Strong Ownership]; The Container class creates and owns the composed objects , the often are instantiating in its own constructor
+-
+-Two [Loose Coupling];This is a better feature for testing , this allowed to be swapped or modify at runtime without alternign the container structure
+-
+-Three [Code Reusability]; Its allowed to reuse existen class without rigid constrains and potential complexity 
+-
+
+EX.
+
+    import java.util.ArrayList;
+    import java.util.List;
+    
+    // The Component class
+    class Room {
+    private String name;
+
+    public Room(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+        }
+    }
+    
+    // The Container class (Composition)
+    class House {
+    // The house owns the rooms; they are created inside the house
+    private List<Room> rooms;
+
+    public House() {
+        this.rooms = new ArrayList<>();
+        // Rooms are instantiated directly by the House
+        rooms.add(new Room("Living Room"));
+        rooms.add(new Room("Bedroom"));
+        rooms.add(new Room("Kitchen"));
+    }
+
+    public void showRooms() {
+        for (Room room : rooms) {
+            System.out.println("Room: " + room.getName());
+            }
+        }
+    }
+    
+    public class CompositionDemo {
+    public static void main(String[] args) {
+    House myHouse = new House();
+    myHouse.showRooms();
+
+        // Note: You cannot create a 'Room' independently and pass it to 'House'
+        // in this strict composition model. The House creates them.
+        }
+    }   
