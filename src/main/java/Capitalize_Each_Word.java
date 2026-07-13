@@ -20,4 +20,5 @@ public class Capitalize_Each_Word {
         System.out.println(str1);
         sc.close();
     }
+
 }
