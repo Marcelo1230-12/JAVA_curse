@@ -10,5 +10,6 @@ public class Convert_to_Lowercases {
         System.out.println(str.toLowerCase());
         sc.close();
     }
+    
 }
 
