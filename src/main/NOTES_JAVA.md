@@ -701,7 +701,7 @@ EX.
 
 Wrapper classes use primitive data type (int, double,string...etc) as a class that can use in the OOP classes, the wrapper 
 classes encapsulate these types of data type. Allowing to the primitives be used as collections [ArrayList<Integer>],generics 
-and AP's that need object that primitives data types.
+and AP's that need object that primitives data types, this class use a way called auto-wrapper.
 
 These wraps classes has constructors to use, like the method  "valueof();" for creation or "Integer.parseInt();" for comparing 
 using "equals();" this can handle cases like null or NaN.
