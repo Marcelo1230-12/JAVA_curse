@@ -695,3 +695,63 @@ EX.
         // in this strict composition model. The House creates them.
         }
     }   
+
+
+# **WRAPPER CLASS**
+
+Wrapper classes use primitive data type (int, double,string...etc) as a class that can use in the OOP classes, the wrapper 
+classes encapsulate these types of data type. Allowing to the primitives be used as collections [ArrayList<Integer>],generics 
+and AP's that need object that primitives data types.
+
+These wraps classes has constructors to use, like the method  "valueof();" for creation or "Integer.parseInt();" for comparing 
+using "equals();" this can handle cases like null or NaN.
+
+EX.
+
+    import java.util.ArrayList;
+    import java.util.List;
+    
+    public class WrapperExample {
+    public static void main(String[] args) {
+    // Autoboxing: primitive int automatically becomes Integer
+    Integer wrappedInt = 42;
+
+        // Unboxing: Integer automatically becomes int
+        int primitiveInt = wrappedInt; 
+
+        // Collections require objects; autoboxing handles the conversion
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(10); // Autoboxing: int 10 → Integer
+        numbers.add(20); // Autoboxing: int 20 → Integer
+
+        // Unboxing occurs when retrieving values
+        int first = numbers.get(0); 
+        
+        System.out.println("First number: " + first); // Output: 10
+        }
+    }       
+
+Ex2.
+
+    public class CreationExample {
+     public static void main(String[] args) {
+        // Recommended: Uses cache for values -128 to 127
+        Integer a = Integer.valueOf(100);
+        Integer b = Integer.valueOf(100);
+
+        // Deprecated: Always creates a new object
+        // Integer c = new Integer(100); 
+
+        // Demonstrates caching: 'a' and 'b' refer to the SAME object
+        System.out.println(a == b); // Output: true
+
+        // Values outside the cache range create new objects
+        Integer x = Integer.valueOf(200);
+        Integer y = Integer.valueOf(200);
+        System.out.println(x == y); // Output: false (different references)
+        
+        // Always use .equals() for value comparison
+        System.out.println(x.equals(y)); // Output: true
+        }
+    }   
+
