@@ -755,3 +755,83 @@ Ex2.
         }
     }   
 
+# **ARRAYLIST**
+
+Arraylist is a resizable array that stores objects (from the autoboxing) the difference between an array is this has 
+a fixed sizes and the Arraylist can change.
+The sizes of an arraylist is minimum 10 but is can grow or shrink, to check inside the array is in a loop with a O(1)interval,
+can only store wrapp classes and not primitives data types, so we most need to conver the data type to a wrapper class, 
+the arraylist a common operator that is use in these classes and are add() to insert,get() to retrieve ,remove() to delete 
+,size() to check the numbers of elements.
+
+EX.
+
+    import java.util.ArrayList;
+
+    public class BasicExample {
+    public static void main(String[] args) {
+    // Create an ArrayList of Strings
+    ArrayList<String> fruits = new ArrayList<>();
+
+        // Add elements
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Orange");
+
+        // Access element at index 0
+        System.out.println("First fruit: " + fruits.get(0)); // Output: Apple
+
+        // Modify element at index 1
+        fruits.set(1, "Blueberry"); 
+
+        // Remove an element by value
+        fruits.remove("Orange");
+
+        // Print the modified list
+        System.out.println("Updated List: " + fruits); // Output: [Apple, Blueberry]
+        
+        // Check size
+        System.out.println("Size: " + fruits.size()); // Output: 2
+        }
+    }   
+
+to loop through the array is possible to use a for loop or while loop.
+
+EX.
+
+    for (int i = 0; i < fruits.size(); i++) {
+    System.out.println("Index " + i + ": " + fruits.get(i));
+    }   
+
+## OR
+
+    import java.util.Iterator;
+    Iterator<String> iterator = fruits.iterator();
+    while (iterator.hasNext()) {
+    String fruit = iterator.next();
+    if (fruit.equals("Apple")) {
+    iterator.remove(); // Safely removes "Apple"
+        }
+    }
+
+Ex with autoboxing//
+
+    import java.util.ArrayList;
+    
+    public class NumberExample {
+    public static void main(String[] args) {
+    // Create an ArrayList of Integers
+    ArrayList<Integer> numbers = new ArrayList<>();
+
+        // Autoboxing: primitive int is automatically converted to Integer
+        numbers.add(10); 
+        numbers.add(20);
+        numbers.add(30);
+
+        // Unboxing: Integer is automatically converted to int for math
+        int sum = numbers.get(0) + numbers.get(1); 
+        System.out.println("Sum: " + sum); // Output: 30
+        }
+    }   
+    
+# ****
