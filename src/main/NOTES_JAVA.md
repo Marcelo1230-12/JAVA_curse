@@ -834,4 +834,47 @@ Ex with autoboxing//
         }
     }   
     
-# ****
+# **EXEPTIONS**
+
+This a feature that java has it, this is an event that interrupts the normal flow of the program like, dividing by 0, file not found,
+or mismatch input, for these errors java implement methods that helps to avoid it , these methods are try{},catch{}, finally{}.
+each of these ones has a specific work to do.
+
+## TRY{}
+
+TRY {}=Enclose a block of code that may trow a error in its running time, if any exceptions occurs int the remainder code, this block of code is skipped, 
+and anything else is transfer to the catch{} block 
+
+## CATCH{}
+
+CATCH{}=This handles the exeptions thrown by the try{} block code, Catch{} can only occuors only when a matching execptions occurs , it is possible to have many catch{} with 
+differents exceptions types.
+
+## FINALLY{}
+
+FINALLY{}= This always is executing no matter what, regardless of whether an exceptions happen or not ,this has an primety task that is for cleanup tasks
+like closing files, some databases, connections , or releasing resources.
+
+EX
+
+    public class DivisionExample {
+    public static void main(String[] args) {
+        int[] numbers = {10, 5, 0};
+        
+        for (int i = 0; i < numbers.length; i++) {
+            try {
+                // TRY: Risky code that might throw an exception
+                int result = 100 / numbers[i];
+                System.out.println("Result: " + result);
+                
+            } catch (ArithmeticException e) {
+                // CATCH: Executes ONLY if an ArithmeticException occurs
+                System.out.println("Error: Cannot divide by zero!");
+                
+            } finally {
+                // FINALLY: Always executes (success or failure)
+                System.out.println("Iteration " + i + " completed.\n");
+                }
+            }
+        }
+    }   
