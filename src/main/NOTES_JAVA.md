@@ -870,7 +870,6 @@ EX
             } catch (ArithmeticException e) {
                 // CATCH: Executes ONLY if an ArithmeticException occurs
                 System.out.println("Error: Cannot divide by zero!");
-                
             } finally {
                 // FINALLY: Always executes (success or failure)
                 System.out.println("Iteration " + i + " completed.\n");
