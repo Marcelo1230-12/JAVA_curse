@@ -15,7 +15,7 @@ int lng;
         int  []list2 = new int[lng];
         for (int i = 0; i < lng - 1; i++) {
             list2[i] = list[i + 1];
-        }
+        }// this for loop is to changhe the order of the list in any size of the array list 😉
         list2[lng - 1] = list[0];
         for(int a : list2){
             System.out.print("["+a+","+"]");
