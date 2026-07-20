@@ -953,3 +953,32 @@ EX.
         }
     }   
 
+# **TIME AND TIMERTASK**
+
+To use the time class is a extencion of java we need to import the time methods to the class , this is very helpful to sending notifications,
+or possible for any schedule updates , or any repatitive actions.
+
+EX
+
+
+    import java.util.Timer;
+    import java.util.TimerTask;
+    
+    public class OneTimeExample {
+        public static void main(String[] args) {
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+    @Override
+    public void run() {
+        System.out.println("One-time task executed at: " + System.currentTimeMillis());
+            }
+        };
+
+        // Schedule task after 2000ms (2 seconds)
+        timer.schedule(task, 2000);
+        
+        // Cancel timer after task completes to stop the program
+        // timer.cancel(); 
+        }
+    }   
+
