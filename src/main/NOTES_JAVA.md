@@ -926,3 +926,30 @@ import java.text.SimpleDateFormat;
             }
         }
 
+# **ANONYMOUS CLASS**
+
+This classes is called like that because they doesn't have a name , this classes can't be reused, it can't have a constructure either
+this block of code use a instance initializater blocks to be set up a state typically used for one-time implementations of an interface 
+or subclass(timer task,Runnable,callbacks)
+
+EX.
+
+    // Define a simple interface
+    interface Greeting {
+       void sayHello();
+        }
+    
+    public class Main {
+        public static void main(String[] args) {
+    // Create an anonymous class implementing Greeting
+        Greeting greet = new Greeting() {
+        @Override
+        public void sayHello() {
+        System.out.println("Hello, World!");
+            }
+        };
+
+        greet.sayHello(); // Output: Hello, World!
+        }
+    }   
+
