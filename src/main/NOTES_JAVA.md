@@ -877,3 +877,52 @@ EX
             }
         }
     }
+
+# **DATES OR TIME**
+
+this section is to implements the use of time using Java like Localtime,Localdate,LocalDataTime and UTC timestamp 
+
+## LOCAL TIME 
+ 
+This is refering to represent the time 
+
+    14:30:15 hours:minutes:seconds
+
+## LOCAL DATE
+
+This is refering to represent the date 
+
+    2006-11-10 year/month/day || this will depents on the region and how they manage the format 
+
+## LOCAL DATE AND TIME
+
+This is refering to represent the date and time together of the region 
+
+
+    2003-11-10T14:30:15 this is put together the date format and the time 
+
+## ZONE DATE TIME
+
+This is the regiong where the time and date depens of the time zone 
+
+    2000-11-10 T14:30:15+02:00[Europe/Paris] the number after the + signe is the hours of that zone 
+
+    ex. Europe is 2 hours ahead of USA
+
+## DateTimeFormatter
+
+Used for formatting and parsing our own dates.
+
+There is a way to access to the time and is 
+
+    import java.util.Date;
+import java.text.SimpleDateFormat;
+
+    public class Main {
+        public static void main(String[] args) {
+            Date now = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            System.out.println("Legacy Date: " + sdf.format(now));
+            }
+        }
+
