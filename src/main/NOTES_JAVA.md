@@ -982,3 +982,49 @@ EX
         }
     }   
 
+# **GENERICS**
+
+This is an concept of where the code can be write a class , interface or any method that can be compatible, this can be helful to optimization technique
+with differents data types without has to specific the data type in advance, The use is [<T>] type parameter. To create a Generic class we need 
+to use enclosed brackets '<>' with a single uppercase letter '<E>' , This allow to the class work with varius objects in the class, giving compatible 
+time.
+This works with any data types EX. int,strings,double,chars..etc , the most common used of these generics are in arrays 
+
+The sintax is.
+
+    public class Box<T> {
+    private T content;
+
+    public void set(T content) {
+        this.content = content;
+    }
+
+    public T get() {
+        return content;
+        }
+    }   
+
+The generics can also work with multy-parametres and also can extens from other classes .
+
+EX.
+    
+    // T must be a Number or a subclass of Number
+    public class NumberBox<T extends Number> {
+    private T number;
+    // ...
+    }   
+
+EX.
+
+    public class Pair<K, V> {
+        private K key;
+        private V value;
+
+    public Pair(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    public K getKey() { return key; }
+    public V getValue() { return value; }
+    }  
