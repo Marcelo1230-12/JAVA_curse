@@ -1028,3 +1028,45 @@ EX.
     public K getKey() { return key; }
     public V getValue() { return value; }
     }  
+
+# **HASHMAP**
+
+Hashmap in java is a data structure that store a unique key-values, but this values can be duplicated, hashmasps doesn't 
+mantain any order, but in its memory is more efficient. Hashmaps works in a O(1) time complexity with simple operations 
+like put, get, remove. Hashmaps stores the  elements as nodes, is method hashCode() is used to determinate the index and the 
+equal() method is to resolve collitions.
+Hashmaps allow to have one null key and multiples null keys.
+
+-The use of this is to  has a better perfomance in the compiler time
+-
+-Its has some commun methods to use like put(key,value); to add or updates keys entries, get(key); to get the values of the key
+-
+-containsKey(key); to check if the key exists in the code,entrySet() this alllow to a interation over the pairs.
+-
+
+EX.
+
+    import java.util.HashMap;
+    import java.util.Map;
+    
+    public class Main {
+    public static void main(String[] args) {
+    // Create a HashMap with String keys and Integer values
+    Map<String, Integer> map = new HashMap<>();
+
+        // Add mappings
+        map.put("Apple", 1);
+        map.put("Banana", 2);
+        
+        // Retrieve value
+        System.out.println("Apple count: " + map.get("Apple")); // Output: 1
+        
+        // Check key existence
+        System.out.println("Has Banana: " + map.containsKey("Banana")); // Output: true
+        
+        // Iterate over entries
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+            }
+        }
+    }   
