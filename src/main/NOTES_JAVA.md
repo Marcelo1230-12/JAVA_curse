@@ -1128,7 +1128,7 @@ Threading has a livecycle of 5 cases.
 2. Runnable= Ready to run the code, waiting for CPU time-run.
 3. Running = This is when the code start to be executed
 4. Blocked= Is Pause due by the I/O, sleep or any synchronization.
-5. Terminated= This Finist the executed code or kill the code.
+5. Terminated= This Finist the executed code or kill the code. using setdeamon(); ends the program when the main treat is done 
 
 EX when is extending the thread class
 
@@ -1147,3 +1147,47 @@ EX when its implementated in runnable interface
         }
     }
     // Usage: new Thread(new MyRunnable()).start();   
+
+# **MULTITHREADING**
+
+This is the same as thread just that the name say is where are multiples thread working or running in the same time. 
+this is very helpful to maximizing the CPU utilization and improving applications responsiveness, multithread run in a 
+parallel way where in the regular thread if runs continues , multithread run all in one time.
+
+EX/
+    
+    class PrintingTask implements Runnable {
+    private String message;
+
+    public PrintingTask(String message) {
+        this.message = message;
+    }
+
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(Thread.currentThread().getName() + ": " + message + " - Count " + i);
+            try {
+                Thread.sleep(500); // Simulate work
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                }
+            }
+        }
+    }
+    
+    public class RunnableExample {
+    public static void main(String[] args) {
+    Runnable task1 = new PrintingTask("Hello");
+    Runnable task2 = new PrintingTask("World");
+
+        Thread t1 = new Thread(task1, "Thread-1");
+        Thread t2 = new Thread(task2, "Thread-2");
+
+        t1.start(); // Starts the thread, calling run() internally
+        t2.start();
+        
+        System.out.println("Main thread continues execution...");
+        }
+    }     
+
