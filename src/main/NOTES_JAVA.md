@@ -1113,3 +1113,37 @@ EX/
     public double getMass() { return mass; }
     public double getRadius() { return radius; }    
     }   
+
+# **THREADING**
+
+THREADING in java tis a way to allow the program to run multiple task simultaneously 
+this will be helpful to improves perfomance with time consuming operations, like checking 
+Files, in the network communicatio, and any backend program tasks. This works by extending the Thread class
+or have to implement the runnable interface with calling the start(); methods rather that sun();.
+
+Threading has a livecycle of 5 cases.
+
+
+1. New= This created but start the program yet.
+2. Runnable= Ready to run the code, waiting for CPU time-run.
+3. Running = This is when the code start to be executed
+4. Blocked= Is Pause due by the I/O, sleep or any synchronization.
+5. Terminated= This Finist the executed code or kill the code.
+
+EX when is extending the thread class
+
+    class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread running via Thread class");
+     }
+    }
+    // Usage: new MyThread().start();   
+
+EX when its implementated in runnable interface 
+
+    class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Thread running via Runnable interface");
+        }
+    }
+    // Usage: new Thread(new MyRunnable()).start();   
