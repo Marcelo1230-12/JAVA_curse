@@ -1070,3 +1070,46 @@ EX.
             }
         }
     }   
+
+# **ENUMS**
+
+Enums is in java as enumerations, this is a special class that can represent a group of fixed constants , 
+Enums can improve code for reability and be so easy to maintain more efficient with the switches methods 
+to comparing Strings, enums replace numeric or string constants with meaningful names.
+
+
+EX.
+
+    public enum Day {
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+        Day today = Day.MONDAY;
+        System.out.println("Today is: " + today);
+        }
+    } 
+
+This is very helpful to invalid assignments , enums class can provide by itself some constructors and methods 
+to use , some of these methods are help to be build some, like values(); this return an array  of constans , also
+valueof(); this print or get the name of the constant and ordinal(); this method is to get the order 
+that the enum is declare.
+
+EX/
+
+    enum Planet {
+    MERCURY(3.303e+23, 2.4397e6),
+    VENUS(4.869e+24, 6.0518e6);
+
+    private final double mass;
+    private final double radius;
+
+    Planet(double mass, double radius) {
+        this.mass = mass;
+        this.radius = radius;
+    }
+
+    public double getMass() { return mass; }
+    public double getRadius() { return radius; }    
+    }   
