@@ -1189,6 +1189,5 @@ EX/
         
         System.out.println("Main thread continues execution...");
         }
-    }     
-
+    }
     
