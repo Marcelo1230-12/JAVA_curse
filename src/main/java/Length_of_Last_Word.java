@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Length_of_Last_Word {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         String str;
         System.out.println("Enter a string");
         str = sc.nextLine();
