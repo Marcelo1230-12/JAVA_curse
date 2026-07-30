@@ -12,6 +12,7 @@ public class Check_Isomorphic_Strings {
         HashMap<Character,Character> map = new HashMap<>();
         HashMap<Character,Character> map2 = new HashMap<>();
 boolean value = true;
+//check the first str and the second string
         for(int j=0;j<s1.length();j++){
         if(map.containsKey(s1.charAt(j))){
             if(map.get(s1.charAt(j))!=s2.charAt(j)){
@@ -24,6 +25,7 @@ break;
 
         }
         }
+        //check the second string and the first
         if(value) {
             for (int j = 0; j < s1.length(); j++) {
                 if (map2.containsKey(s2.charAt(j))) {
@@ -38,7 +40,6 @@ break;
             }
 
         }
-
         System.out.println(value);
     }
     }
