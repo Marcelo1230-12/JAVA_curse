@@ -15,7 +15,7 @@ public class Move_Zeros_to_Right {
         int index=0;
 
         for (int i=0;i<lsit.length;i++){
-            if(lsit[i]>0){
+            if(lsit[i]!=0){
                 nlist[index]=lsit[i];
                 index++;
             }
