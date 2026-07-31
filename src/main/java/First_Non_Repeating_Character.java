@@ -19,6 +19,6 @@ public class First_Non_Repeating_Character {
                 }
             }
         }
-
+sc.close();
     }
 }
