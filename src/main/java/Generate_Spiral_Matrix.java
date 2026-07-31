@@ -1,9 +1,10 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Generate_Spiral_Matrix {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        System.out.println("enter the number 5");
+        System.out.println("enter the number:");
         int n=sc.nextInt();
         int [][]arr=new int[n][n];
         int top=0, bottom=n-1, left=0, right=n-1, start=1;
@@ -13,7 +14,7 @@ public class Generate_Spiral_Matrix {
             }
             top++;
             for(int i =top;i<=bottom;i++){
-                arr[i][left]=start++;//top to bottom
+                arr[i][right]=start++;//top to bottom
             }
             right--;
             for(int i=right;i>=left;i--){
@@ -21,10 +22,18 @@ public class Generate_Spiral_Matrix {
             }
             bottom--;
             for(int i=bottom;i>=top;i--){
-                arr[i][right]=start++;//bottom to up
+                arr[i][left]=start++;//bottom to up
             }
             left++;
         }
+        for (int i=0;i<n;i++){
+            for (int j=0;j<n;j++){
+                System.out.print(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+
         sc.close();
     }
 }
