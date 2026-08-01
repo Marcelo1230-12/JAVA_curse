@@ -12,9 +12,9 @@ public class Maximum_Sum_of_Contiguous_Subsequence {
         }
        int max = Integer.MIN_VALUE;
         for(int i =0; i<n; i++){
-            int total = 0;
+            int total = 0;// holder variable to later to add with the number in the list
             for(int j=i; j<n; j++){
-                total+=arr[j];
+                total+=arr[j];// check the maximun of the sum and check it
                 max = Math.max(total,max);
             }
         }
